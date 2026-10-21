@@ -1,0 +1,77 @@
+.rnp {
+	--rnp-loading-opacity: .5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+.rnp.is-empty { display: none; }
+
+.rnp__list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.rnp__list > li { margin: 0; padding: 0; list-style: none; }
+.rnp__list > li::before, .rnp__list > li::marker { content: none; }
+
+.rnp__item {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	box-sizing: border-box;
+	font-size: 15px;
+	line-height: 1;
+	text-decoration: none !important;
+	transition: background-color .2s, color .2s, border-color .2s, box-shadow .2s, opacity .2s;
+	user-select: none;
+}
+
+.rnp__num {
+	min-width: 40px;
+	height: 40px;
+	padding: 0 6px;
+	border-radius: 50%;
+	color: #1f2937;
+	font-weight: 500;
+}
+a.rnp__num:hover { background-color: #f3f4f6; }
+.rnp__num.is-current { background-color: #F5A623; color: #fff; font-weight: 600; }
+
+.rnp__pn {
+	padding: 10px 20px;
+	border: 1px solid #e5e7eb;
+	border-radius: 999px;
+	background-color: #fff;
+	color: #1f2937;
+	font-weight: 500;
+}
+a.rnp__pn:hover { background-color: #F5A623; border-color: #F5A623; color: #fff; }
+.rnp__pn.is-disabled { opacity: .4; cursor: not-allowed; }
+.rnp__arrow { width: 14px; height: 14px; flex: none; }
+
+.rnp__dots { min-width: 24px; color: #9ca3af; letter-spacing: 1px; }
+.rnp__info { font-size: 14px; color: #6b7280; }
+.rnp__notice { padding: 10px 14px; border: 1px dashed #f59e0b; border-radius: 6px; background: #fffbeb; color: #92400e; font-size: 13px; }
+
+/* Busy states */
+.rnp.is-loading .rnp__list { pointer-events: none; opacity: .6; }
+.rnp-loading { opacity: var(--rnp-loading-opacity, .5); pointer-events: none; transition: opacity .2s; }
+
+/* Elementor Posts / Loop Grid driven by RN Pagination: hide their own pager. */
+.rnp-native-hidden .elementor-pagination,
+.rnp-native-hidden .e-load-more-anchor,
+.rnp-native-hidden .elementor-button-wrapper.e-load-more-wrapper { display: none !important; }
+
+@media (max-width: 480px) {
+	.rnp__pn:has(.rnp__arrow) span { display: none; }
+	.rnp__pn .rnp__arrow { margin: 0; }
+	.rnp__pn { padding: 10px 12px; }
+}
