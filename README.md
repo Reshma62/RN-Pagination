@@ -2,7 +2,7 @@
 
 **One Elementor pagination widget for everything.** It works with blog and archive pages, search results, the WooCommerce shop, JetEngine Listing Grids and Elementor Posts / Loop Grids, with AJAX page loading and full style controls.
 
-![RN Pagination](screenshots/cover.png)
+![RN Pagination](rn-pagination/screenshots/cover.png)
 
 ![Version](https://img.shields.io/badge/version-2.0.0-7c5cff)
 ![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759b)
